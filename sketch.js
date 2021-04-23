@@ -55,7 +55,7 @@ function setup() {
   block25 = new Block(700,95,30,40);
 
   //ball holders with slings
-  polygon = Bodies.circle(50 ,200,70);
+  polygon = Bodies.circle(50 ,200,20);
   World.add(world,polygon)
 
   slingShot = new Slingshot(this.polygon,{x:100, y:200});
@@ -113,12 +113,12 @@ imageMode (CENTER)
 image(polygon_img,polygon.position.x,polygon.position.y,40,40)
 //ellipse(0,0,this.r, this.r);
 //ellipseMode(CENTER)
-text("Drag the Hexagonal stone and Realese it to launch it ",40,40)
+text("Drag the Hexagonal stone and Realese it to launch it towards the blocks ",40,40)
 
 }
 function mouseDragged(){
-  Matter.Body.setPosition(this.polygon,{x:mouseX,y:mouseY})
-}   
+  Matter.Body.setPosition(this.polygon, {x: mouseX , y: mouseY});
+}
 
 function mouseReleased(){
   slingShot.fly()
